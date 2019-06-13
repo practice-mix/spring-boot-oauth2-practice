@@ -1,0 +1,30 @@
+server:
+  port: 8080
+# auth server config
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      scope: read,wirte
+      auto-approve-scopes: '.*'
+      accessTokenValiditySeconds: 120 # s
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://192.168.60.199:1111/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 15
+spring:
+  application:
+    name: auth-server
+

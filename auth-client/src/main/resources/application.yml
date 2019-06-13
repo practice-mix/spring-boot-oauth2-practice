@@ -1,0 +1,25 @@
+server:
+  port: 9999
+
+facebook:
+  client:
+    clientId: acme
+    clientSecret: acmesecret
+    accessTokenUri: http://localhost:8080/oauth/token
+    userAuthorizationUri: http://localhost:8080/oauth/authorize
+    grantType: client_credentials
+  resource:
+    userInfoUri: http://localhost:8080/me
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+spring:
+  application:
+    name: auth-client
